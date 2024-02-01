@@ -1,0 +1,31 @@
+body, html, #root {
+    height: 100%;
+    margin: 0;
+}
+
+.bg-default {
+    background-color: #191919;
+}
+
+p, h1, h2, h3, h4, h5, h6, a, span {
+    color: #c1d72d;
+    font-family: 'Workbench', sans-serif;
+    letter-spacing: 4px;
+}
+
+
+
+@keyframes rotateY {
+    0% {
+      transform: rotateY(0deg);
+    }
+    100% {
+      transform: rotateY(360deg);
+    }
+  }
+
+  .rotate-y-animation {
+    animation: rotateY 5s linear infinite; /* 5s คือเวลาที่ animation จะทำงาน, infinite คือให้ทำซ้ำไปเรื่อยๆ */
+  }
+
+@import url('https://fonts.googleapis.com/css2?family=Workbench&display=swap');
