@@ -1,31 +1,78 @@
-body, html, #root {
+body,
+html,
+#root {
     height: 100%;
     margin: 0;
 }
 
 .bg-default {
-    background-color: #191919;
+    background-color: #1b1d07;
 }
 
-p, h1, h2, h3, h4, h5, h6, a, span {
-    color: #c1d72d;
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+span {
+    color: rgb(193, 215, 45);
     font-family: 'Workbench', sans-serif;
     letter-spacing: 4px;
+    text-shadow: 0 0 5px rgb(193, 215, 45);
 }
 
+#glare {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1; /* ensure the effect doesn't cover the text */
+    background: radial-gradient(hsl(154 5% 15%) 0%, hsl(154 50% 5%) 70%);
+}
 
+/* low-resolution screen overlay interlacing */
+@keyframes lines {
+    0% {
+        background-position: 0px 0px;
+    }
+    50% {
+        background-position: 0px 0px;
+    }
+    51% {
+        background-position: 0px 2px;
+    }
+    100% {
+        background-position: 0px 2px;
+    }
+}
+
+#interlaced {
+    position: fixed;
+    background: repeating-linear-gradient(transparent 0px 1px, hsl(154 0% 0%/0.2) 3px 4px);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    pointer-events: none;
+    animation: lines 0.066666666s linear infinite;
+}
 
 @keyframes rotateY {
     0% {
-      transform: rotateY(0deg);
+        transform: rotateY(0deg);
     }
     100% {
-      transform: rotateY(360deg);
+        transform: rotateY(360deg);
     }
-  }
+}
 
-  .rotate-y-animation {
+.rotate-y-animation {
     animation: rotateY 5s linear infinite; /* 5s คือเวลาที่ animation จะทำงาน, infinite คือให้ทำซ้ำไปเรื่อยๆ */
-  }
+}
 
 @import url('https://fonts.googleapis.com/css2?family=Workbench&display=swap');
